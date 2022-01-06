@@ -1,6 +1,5 @@
 package runners;
 
-import io.cucumber.junit.CucumberOptions.SnippetType;
 import io.cucumber.junit.CucumberOptions;
 import net.serenitybdd.cucumber.CucumberWithSerenity;
 import org.junit.runner.RunWith;
@@ -8,10 +7,9 @@ import org.junit.runner.RunWith;
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
         plugin = {"pretty"},
-        features = "src/test/resources/features/products.feature",
+        features = "src/test/resources/features/customers.feature",
         glue 	 = "stepsdefinitions",
-        snippets = SnippetType.CAMELCASE
+        snippets = CucumberOptions.SnippetType.CAMELCASE
 )
-public class RunnerTags {
-
+public class RunnerCustomers {
 }

@@ -4,9 +4,18 @@
     Background: the user is logged in the StartSharp Page
       Given User login in the StartSharp with the user 'admin' and password 'serenity'
 
-    Scenario: The user wants register a new customer
+    @CreateNewCustomer
+    Scenario: The user wants register a new customer appling changes before save
       Given the user goes to the customers table
-      When he does register of a new customer
+      When he does apply changes of a new customer
       |customerId|companyName|
       |ACAB      |Zucaritas  |
-      Then he should filter and find the new customer in the Customers table
+      Then he should see 'Save success' message
+
+    @CreateNewCustomer
+    Scenario: The user wants register a new customer saving the form
+      Given the user goes to the customers table
+      When he saves a new customer
+        |customerId|companyName|
+        |AFAR      |Rampage  |
+      Then he should see the create customer on table

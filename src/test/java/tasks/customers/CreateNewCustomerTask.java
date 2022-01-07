@@ -4,6 +4,7 @@ import model.customers.CustomerData;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
+import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import userinterface.customers.CustomersForm;
 
@@ -17,6 +18,7 @@ public class CreateNewCustomerTask implements Task {
     public CreateNewCustomerTask(List<CustomerData> customerDataList) {
         this.customerDataList = customerDataList;
     }
+
     public static CreateNewCustomerTask registerForm(List<CustomerData> customerDataList) {
         return Tasks.instrumented(CreateNewCustomerTask.class, customerDataList);
     }

@@ -15,7 +15,8 @@
     @CreateNewCustomer
     Scenario: The user wants register a new customer saving the form
       Given the user goes to the customers table
-      When he saves a new customer
+      And he saves a new customer
         |customerId|companyName|
-        |AFAR      |Rampage  |
-      Then he should see the create customer on table
+        |AFAR      |Rampage    |
+      When he search the customer by id 'AFAR'
+      Then he should see the create customer 'AFAR' on table

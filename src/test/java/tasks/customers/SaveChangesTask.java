@@ -8,8 +8,8 @@ import userinterface.customers.CustomersForm;
 
 public class SaveChangesTask implements Task {
 
-    public static ApplyChangesTask save() {
-        return Tasks.instrumented(ApplyChangesTask.class);
+    public static SaveChangesTask save() {
+        return Tasks.instrumented(SaveChangesTask.class);
     }
 
     @Override

@@ -1,6 +1,5 @@
 package stepsdefinitions.customers;
 
-import io.cucumber.java.PendingException;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -8,6 +7,7 @@ import model.customers.CustomerData;
 import net.serenitybdd.screenplay.GivenWhenThen;
 import net.serenitybdd.screenplay.actors.OnStage;
 import org.hamcrest.Matchers;
+import questions.customers.VerifyCustomerOnTableAnswer;
 import questions.customers.AlertMessagesAnswer;
 import tasks.customers.*;
 
@@ -34,8 +34,13 @@ public class customersRegisterSteps {
         OnStage.theActorInTheSpotlight().attemptsTo(CreateNewCustomerTask.registerForm(customerDataList), SaveChangesTask.save());
     }
 
-    @Then("he should see the create customer on table")
-    public void he_should_see_the_create_customer_on_table() throws Throwable {
-        throw new PendingException();
+    @When("he search the customer by id {string}")
+    public void he_search_the_customer_by_id(String message) {
+        OnStage.theActorInTheSpotlight().attemptsTo(SearchCustomerByIdTask.search(message));
+    }
+
+    @Then("he should see the create customer {string} on table")
+    public void he_should_see_the_create_customer_on_table(String message) {
+        OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat("Verifiy the customer on table", VerifyCustomerOnTableAnswer.verifyById(), Matchers.equalTo(message)));
     }
 }

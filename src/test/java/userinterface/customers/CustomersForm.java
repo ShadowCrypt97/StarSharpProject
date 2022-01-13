@@ -35,7 +35,7 @@ public class CustomersForm {
     public static final Target INPUT_EMAIL = Target.the("Campo email").located(By.cssSelector("#s2id_autogen24"));
     public static final Target INPUT_SEND_BULLETIN  = Target.the("Campo send bulletin").located(By.cssSelector("#Serenity_Demo_Northwind_CustomerDialog79_ContactName"));
     //Buttons
-    public static final Target BUTTON_APPLY_CHANGES = Target.the("Botón para aplicar cambios").located(By.cssSelector("span.button-inner > i.fa-check-circle,text-purple"));
+    public static final Target BUTTON_APPLY_CHANGES = Target.the("Botón para aplicar cambios").located(By.cssSelector("span.button-inner > i.fa-clipboard-check,text-purple"));
     public static final Target BUTTON_SAVE = Target.the("Botón para guardar").located(By.xpath("//span[contains(text(),'Save')]"));
     //Alerts
     public static final Target ALERT_SUCCESS_MESSAGE = Target.the("alert con mensaje success").located(By.xpath("//div[contains(text(),'Save success')]"));

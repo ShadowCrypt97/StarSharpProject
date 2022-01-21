@@ -6,10 +6,13 @@ import io.cucumber.java.en.When;
 import model.customers.CustomerData;
 import net.serenitybdd.screenplay.GivenWhenThen;
 import net.serenitybdd.screenplay.actors.OnStage;
+import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 import org.hamcrest.Matchers;
 import questions.customers.VerifyCustomerOnTableAnswer;
 import questions.customers.AlertMessagesAnswer;
 import tasks.customers.*;
+import userinterface.customers.CustomersTable;
 
 import java.util.List;
 
@@ -41,7 +44,6 @@ public class customersRegisterSteps {
 
     @Then("he should see the create customer data on table")
     public void he_should_see_the_create_customer_on_table(List<CustomerData> customerDataList) {
-        String customerId = customerDataList.get(0).customerId;
-        OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat("Verifiy the customer on table", VerifyCustomerOnTableAnswer.verifyCustomerDataOnTable(customerId)));
+        OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat("Verifiy the customer on table", VerifyCustomerOnTableAnswer.verifyCustomerDataOnTable(customerDataList)));
     }
 }

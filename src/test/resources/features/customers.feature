@@ -18,10 +18,10 @@
       And he saves a new customer
         |customerId  |companyName     |contactName  |contactTitle   |address  |region   |postalCode   |phone  |fax   |email   |country  |city     |representatives  |
         |<customerId>|<companyName>   |<contactName>|<contactTitle> |<address>|<region> |<postalCode> |<phone>|<fax> |<email> |<country>|<city>   |<representatives>|
-      When he search the customer by id 'AFAR'
+      When he search the customer by id '<customerId>'
       Then he should see the create customer data on table
         |customerId  |companyName     |contactName  |contactTitle   |address  |region   |postalCode  |phone  |fax   |email  |country  |city  |representatives   |
         |<customerId>|<companyName>   |<contactName>|<contactTitle> |<address>|<region> |<postalCode>|<phone>|<fax> |<email>|<country>|<city>|<representatives> |
       Examples:
         |customerId|companyName|contactName  |contactTitle |address         |region   |postalCode |phone     |fax         |email                    |country|city     |representatives|
-        |AFAR      |Rampage    |Juan  Pedraza|Lawyer       |Cll 100 #15 - 03|Usaquen  |10101      |3123456789|31478951357 |juan.pedraza@example.com |Canada |Vancouver|Janet Leverling|
+        |KASR      |Rampage    |Juan Pedraza|Lawyer       |Cll 100 #15 - 03|Usaquen  |10101      |3123456789|31478951357 |juan.pedraza@example.com |Canada |Vancouver|Janet Leverling|

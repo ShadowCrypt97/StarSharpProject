@@ -9,6 +9,7 @@ import org.junit.runner.RunWith;
         plugin = {"pretty"},
         features = "src/test/resources/features/customers.feature",
         glue 	 = "stepsdefinitions",
+        tags = "@CreateNewCustomerAndSave",
         snippets = CucumberOptions.SnippetType.CAMELCASE
 )
 public class RunnerCustomers {

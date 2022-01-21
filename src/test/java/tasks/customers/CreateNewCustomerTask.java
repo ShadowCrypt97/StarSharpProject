@@ -20,6 +20,9 @@ public class CreateNewCustomerTask implements Task {
     private String phone;
     private String fax;
     private String email;
+    public static String country;
+    public static String city ;
+    public static String representative;
     private final List<CustomerData> customerDataList;
 
     public CreateNewCustomerTask(List<CustomerData> customerDataList) {
@@ -42,9 +45,9 @@ public class CreateNewCustomerTask implements Task {
             phone =list.getPhone();
             fax = list.getFax();
             email = list.getEmail();
-            CustomersForm.city = list.getCity();
-            CustomersForm.representative = list.getRepresentatives();
-            CustomersForm.country = list.getCountry();
+            city = list.getCity();
+            representative = list.getRepresentatives();
+            country = list.getCountry();
         }
         actor.attemptsTo(Enter.theValue(customerId).into(CustomersForm.INPUT_CUSTOMER_ID),
                          Enter.theValue(companyName).into(CustomersForm.INPUT_COMPANY_NAME),

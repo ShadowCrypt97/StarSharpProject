@@ -41,6 +41,7 @@ public class customersRegisterSteps {
 
     @Then("he should see the create customer data on table")
     public void he_should_see_the_create_customer_on_table(List<CustomerData> customerDataList) {
-        OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat("Verifiy the customer on table", VerifyCustomerOnTableAnswer.verifyCustomerDataOnTable(), Matchers.equalTo(customerDataList.get(0).customerId)));
+        String customerId = customerDataList.get(0).customerId;
+        OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat("Verifiy the customer on table", VerifyCustomerOnTableAnswer.verifyCustomerDataOnTable(customerId)));
     }
 }

@@ -1,16 +1,13 @@
 package tasks.customers;
 
-import model.customers.CustomerData;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Enter;
-import net.serenitybdd.screenplay.waits.WaitOnQuestion;
-import net.serenitybdd.screenplay.waits.WaitWithTimeout;
+import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 import org.openqa.selenium.Keys;
 import userinterface.customers.CustomersTable;
-
-import java.util.List;
 
 public class SearchCustomerByIdTask implements Task {
 
@@ -28,5 +25,6 @@ public class SearchCustomerByIdTask implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(Enter.theValue(message).into(CustomersTable.SEARCH_BAR),
                          Enter.keyValues(Keys.ENTER).into(CustomersTable.SEARCH_BAR));
+                         WaitUntil.the(CustomersTable.CUSTOMER_ID, WebElementStateMatchers.isVisible()).forNoMoreThan(10).seconds();
     }
 }

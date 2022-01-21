@@ -13,10 +13,15 @@
       Then he should see 'Save success' message
 
     @CreateNewCustomer
-    Scenario: The user wants register a new customer saving the form
+    Scenario Outline: The user wants register a new customer saving the form
       Given the user goes to the customers table
       And he saves a new customer
-        |customerId|companyName|
-        |AFAR      |Rampage    |
+        |customerId  |companyName     |contactName  |contactTitle   |address  |region   |postalCode   |phone  |fax   |email   |country  |city     |representatives  |
+        |<customerId>|<companyName>   |<contactName>|<contactTitle> |<address>|<region> |<postalCode> |<phone>|<fax> |<email> |<country>|<city>   |<representatives>|
       When he search the customer by id 'AFAR'
-      Then he should see the create customer 'AFAR' on table
+      Then he should see the create customer data on table
+        |customerId  |companyName     |contactName  |contactTitle   |address  |region   |postalCode  |phone  |fax   |email  |country  |city  |representatives   |
+        |<customerId>|<companyName>   |<contactName>|<contactTitle> |<address>|<region> |<postalCode>|<phone>|<fax> |<email>|<country>|<city>|<representatives> |
+      Examples:
+        |customerId|companyName|contactName  |contactTitle |address         |region   |postalCode |phone     |fax         |email                    |country|city     |representatives|
+        |AFAR      |Rampage    |Juan  Pedraza|Lawyer       |Cll 100 #15 - 03|Usaquen  |10101      |3123456789|31478951357 |juan.pedraza@example.com |Canada |Vancouver|Janet Leverling|

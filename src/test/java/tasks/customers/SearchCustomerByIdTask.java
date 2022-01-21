@@ -5,6 +5,8 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Enter;
+import net.serenitybdd.screenplay.waits.WaitOnQuestion;
+import net.serenitybdd.screenplay.waits.WaitWithTimeout;
 import org.openqa.selenium.Keys;
 import userinterface.customers.CustomersTable;
 

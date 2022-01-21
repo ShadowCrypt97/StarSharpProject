@@ -39,8 +39,8 @@ public class customersRegisterSteps {
         OnStage.theActorInTheSpotlight().attemptsTo(SearchCustomerByIdTask.search(message));
     }
 
-    @Then("he should see the create customer {string} on table")
-    public void he_should_see_the_create_customer_on_table(String message) {
-        OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat("Verifiy the customer on table", VerifyCustomerOnTableAnswer.verifyById(), Matchers.equalTo(message)));
+    @Then("he should see the create customer data on table")
+    public void he_should_see_the_create_customer_on_table(List<CustomerData> customerDataList) {
+        OnStage.theActorInTheSpotlight().should(GivenWhenThen.seeThat("Verifiy the customer on table", VerifyCustomerOnTableAnswer.verifyCustomerDataOnTable(), Matchers.equalTo(customerDataList.get(0).customerId)));
     }
 }

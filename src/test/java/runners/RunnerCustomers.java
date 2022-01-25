@@ -2,6 +2,7 @@ package runners;
 
 import io.cucumber.junit.CucumberOptions;
 import net.serenitybdd.cucumber.CucumberWithSerenity;
+import io.cucumber.tagexpressions.Expression;
 import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
@@ -9,7 +10,7 @@ import org.junit.runner.RunWith;
         plugin = {"pretty"},
         features = "src/test/resources/features/customers.feature",
         glue 	 = "stepsdefinitions",
-        tags = "@CreateNewCustomerAndSave",
+        tags = "@customers",
         snippets = CucumberOptions.SnippetType.CAMELCASE
 )
 public class RunnerCustomers {

@@ -20,9 +20,9 @@ public class CreateNewCustomerTask implements Task {
     private String phone;
     private String fax;
     private String email;
-    public static String country;
-    public static String city ;
-    public static String representative;
+    public String country;
+    public String city ;
+    public String representative;
     private final List<CustomerData> customerDataList;
 
     public CreateNewCustomerTask(List<CustomerData> customerDataList) {
@@ -64,7 +64,6 @@ public class CreateNewCustomerTask implements Task {
                          Enter.theValue(phone).into(CustomersForm.INPUT_PHONE),
                          Enter.theValue(fax).into(CustomersForm.INPUT_FAX),
                          Enter.theValue(email).into(CustomersForm.INPUT_EMAIL)
-
         );
     }
 }

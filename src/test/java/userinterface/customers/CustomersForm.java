@@ -1,5 +1,6 @@
 package userinterface.customers;
 
+import model.customers.CustomerData;
 import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;
 import tasks.customers.CreateNewCustomerTask;
@@ -14,13 +15,13 @@ public class CustomersForm {
     public static final Target INPUT_CONTACT_NAME = Target.the("Campo contact name").located(By.cssSelector("input[name='ContactName']"));
     public static final Target INPUT_CONTACT_TITLE = Target.the("Campo contact title").located(By.cssSelector("input[name='ContactTitle']"));
     public static final Target DROPDOWN_REPRESENTATIVES = Target.the("Campo dropdown representatives").located(By.xpath("//div[@id='s2id_Serenity_Demo_Northwind_CustomerDialog9_Representatives']"));
-    public static final Target SELECT_REPRESENTATIVES = Target.the("Campo para seleccionar representatives").located(By.xpath("//div[contains(text(),'"+CreateNewCustomerTask.representative+"')] "));
+    public static final Target SELECT_REPRESENTATIVES = Target.the("Campo para seleccionar representatives").located(By.xpath("//div[contains(text(),'Andrew Fuller')]"));
     //Address
     public static final Target INPUT_ADDRESS = Target.the("Campo address").located(By.cssSelector("#Serenity_Demo_Northwind_CustomerDialog44_Address"));
     public static final Target DROPDOWN_COUNTRY = Target.the("Campo dropdown país").located(By.cssSelector("#select2-chosen-5"));
-    public static final Target SELECT_COUNTRY = Target.the("Seleccion de país").located(By.xpath("//li/div[contains(text(),'"+ CreateNewCustomerTask.country+"')]"));
+    public static final Target SELECT_COUNTRY = Target.the("Seleccion de país").located(By.xpath("//li/div[contains(text(),'Argentina')]"));
     public static final Target DROPDOWN_CITY = Target.the("Campo dropdown ciudad").located(By.xpath("//div[@id='s2id_Serenity_Demo_Northwind_CustomerDialog9_City']"));
-    public static final Target SELECT_CITY = Target.the("Seleccion de ciudad").located(By.xpath("//li/div[contains(text(),'"+CreateNewCustomerTask.city+"')]"));
+    public static final Target SELECT_CITY = Target.the("Seleccion de ciudad").located(By.xpath("//li/div[contains(text(),'Buenos Aires')]"));
     public static final Target INPUT_REGION  = Target.the("Campo región").located(By.cssSelector("input[name='Region']"));
     public static final Target INPUT_POSTAL_CODE = Target.the("Campo postal code").located(By.cssSelector("input[name='PostalCode']"));
     public static final Target INPUT_PHONE = Target.the("Campo phone").located(By.cssSelector("input[name='Phone']"));

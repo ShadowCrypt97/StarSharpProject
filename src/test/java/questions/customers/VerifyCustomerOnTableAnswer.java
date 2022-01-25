@@ -1,16 +1,11 @@
 package questions.customers;
 
 import model.customers.CustomerData;
-import net.serenitybdd.core.pages.WebElementExpectations;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
-import net.serenitybdd.screenplay.matchers.WebElementStateMatchers;
-import net.serenitybdd.screenplay.waits.WaitUntil;
-import net.serenitybdd.screenplay.waits.WaitUntilTargetIsReady;
 import userinterface.customers.CustomersTable;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;

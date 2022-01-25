@@ -23,7 +23,7 @@ public class CreateNewCustomerTask implements Task {
     public String country;
     public String city ;
     public String representative;
-    private final List<CustomerData> customerDataList;
+    public List<CustomerData> customerDataList;
 
     public CreateNewCustomerTask(List<CustomerData> customerDataList) {
         this.customerDataList = customerDataList;

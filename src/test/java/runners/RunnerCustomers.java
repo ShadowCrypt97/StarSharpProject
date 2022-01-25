@@ -2,7 +2,6 @@ package runners;
 
 import io.cucumber.junit.CucumberOptions;
 import net.serenitybdd.cucumber.CucumberWithSerenity;
-import io.cucumber.tagexpressions.Expression;
 import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)

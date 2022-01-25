@@ -3,6 +3,7 @@ package questions.customers;
 import model.customers.CustomerData;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Question;
+import net.serenitybdd.screenplay.targets.Target;
 import userinterface.customers.CustomersTable;
 
 import java.util.ArrayList;
@@ -35,8 +36,9 @@ public class VerifyCustomerOnTableAnswer implements Question<Boolean>{
                 customerDataList.getRegion(),
                 customerDataList.getRepresentatives())).collect(Collectors.toList());
 
+        Target customerId = Target.the("CustomerId en la tabla").locatedBy("//a[contains(text(),'"+customerDataList.get(0).getCustomerId()+"')]");
         List<String> customerDataObtained = new ArrayList();
-                customerDataObtained.add(CustomersTable.CUSTOMER_ID.resolveFor(actor).getText());
+                customerDataObtained.add(customerId.resolveFor(actor).getText());
                 customerDataObtained.add(CustomersTable.COMPANY_NAME.resolveFor(actor).getText());
                 customerDataObtained.add(CustomersTable.CONTACT_NAME.resolveFor(actor).getText());
                 customerDataObtained.add(CustomersTable.CITY.resolveFor(actor).getText());

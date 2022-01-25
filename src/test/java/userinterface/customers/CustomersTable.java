@@ -19,5 +19,6 @@ public class CustomersTable {
     public static final Target FAX = Target.the("fax").located(By.cssSelector("div[style='top:0px'] div.r9"));
     public static final Target REPRESENTATIVES = Target.the("representatives").located(By.cssSelector("div[style='top:0px'] div.r10"));
     public static final Target DELETE_BUTTON = Target.the("delete button").located(By.cssSelector("div.delete-button"));
+    public static final Target CONFIRMATION_BUTTON = Target.the("confirm delete").located(By.cssSelector("div.modal-footer > button.btn.btn-primary"));
 
 }

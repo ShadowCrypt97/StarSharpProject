@@ -1,20 +1,27 @@
 package tasks.customers;
 
 import net.serenitybdd.screenplay.Actor;
-import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
-import org.openqa.selenium.By;
+import net.serenitybdd.screenplay.targets.Target;
 import userinterface.customers.CustomersTable;
 
 public class OpenCustomerInformationTask implements Task {
-    @Override
-    public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(Click.on(CustomersTable.CUSTOMER_ID));
+
+    public String customerIdObtained;
+
+    public OpenCustomerInformationTask(String customerIdObtained) {
+        this.customerIdObtained = customerIdObtained;
     }
 
-    public static OpenCustomerInformationTask openFromTable() {
-        return Tasks.instrumented(OpenCustomerInformationTask.class);
+    @Override
+    public <T extends Actor> void performAs(T actor) {
+        Target customerId = Target.the("CustomerId en la tabla").locatedBy("//a[contains(text(),'"+customerIdObtained+"')]");
+        actor.attemptsTo(Click.on(customerId));
+    }
+
+    public static OpenCustomerInformationTask openFromTable(String customerIdObtained) {
+        return Tasks.instrumented(OpenCustomerInformationTask.class, customerIdObtained);
     }
 }

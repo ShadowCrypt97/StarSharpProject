@@ -1,9 +1,7 @@
 package userinterface.customers;
 
-import model.customers.CustomerData;
 import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;
-import tasks.customers.CreateNewCustomerTask;
 
 public class CustomersForm {
     //labels
@@ -42,4 +40,6 @@ public class CustomersForm {
     public static final Target BUTTON_SAVE = Target.the("Botón para guardar").located(By.xpath("//span[contains(text(),'Save')]"));
     //Alerts
     public static final Target ALERT_SUCCESS_MESSAGE = Target.the("alert con mensaje success").located(By.xpath("//div[contains(text(),'Save success')]"));
+
+
 }
